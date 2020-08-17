@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Road</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="libs/styles/xcode.css">
+
+    
+  </head>
+  <body>
+    <div class="fullPage">
+    <header>
+      <h1> Распиливаем библиотеку <a target="_blank" href="https://underscorejs.org/">Underscore.js</a> на кусочки by </h1><a href="#"><div class="progremer"><img src="gif/gif.gif"><h2>qb_Wheatley</h2></div></a>
+    </header>
+    <div class="codeContent">
+      <div class="Number">
+        1
+      </div>
+      <div class="Contend">
+      <img src="img/pluck.png" alt="">
+        <pre>
+          <code>
+            //1
+            let stooges = [{name: 'Krista', age: 20}, {name: 'Umir', age: 20}, {name: 'Mikasa', age: 20}]
+            function pluck(arr, key) {
+                 return arr.map(function(item) {
+                   return item[key]
+                  });
+            }
+            console.log(pluck(stooges, 'name'))            
+          </code>
+        </pre>
+        <button id="btn-one">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        2
+      </div>
+      <div class="Contend">
+      <img src="img/sample.png" alt="">
+        <pre>
+          <code>
+            //2
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+              }
+
+            function sample(arr, j = 1) {
+                let arrayFinal = []
+                for(let g = 0; g < j; g++) {
+
+                    arrayFinal.push(arr[getRandomInt(0, arr.length)])
+                }
+
+                return arrayFinal
+            }
+
+            console.log(sample([1, 2, 3, 4, 5, 6], 3));
+            console.log(sample([1, 2, 3, 4, 5, 6]));
+     
+          </code>
+        </pre>
+        <button id="btn-two">Play alert</button>
+      </div>
+      
+    </div>
+    
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        3
+      </div>
+      <div class="Contend">
+      <img src="img/size.png" alt="">
+        <pre>
+          <code>
+            //3 
+            console.log( size( [1, 2, 3, 4, 5] ) );
+            console.log( size( {one: 1, two: 2, three: 3} ) );
+            function size(elem) {
+                if (elem.length >= 0){
+                  return elem.length
+                } else {
+                    let count = 0
+                    for (const key in elem) {
+                        count ++
+                    }
+                    console.log(count)
+                }
+            }   
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        4
+      </div>
+      <div class="Contend">
+      <img src="img/first.png" alt="">
+        <pre>
+          <code>
+            //4 
+            console.log(first([6,5,4,8,9,10], 5))
+
+            function first(array, n = 1) {
+              let arr = [];
+                for (let i = 0; i < n; i++){
+                 arr.push(array[i])
+            }
+            return arr
+            }
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        5
+      </div>
+      <div class="Contend">
+      <img src="img/last.png" alt="">
+        <pre>
+          <code>
+            //5
+            console.log(last([6,5,4,8,9,10], 3))
+            function last(array, n) {
+            let arr = []
+            for(let i = 1; i < n+1; i++ ) {
+              arr.push( array[array.length - i]) // push или unshift 
+                                           // Смотря какой порядок нужен
+            }
+            return arr
+}
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        6
+      </div>
+      <div class="Contend">
+      <img src="img/some.png" alt="">
+        <pre>
+          <code>
+            //6 
+            function some(arr) {
+              let result = false
+            arr.forEach(function(element) {
+              if(element == true) {
+                console.log('dsdsdsds')
+              result = true
+              } 
+            });
+              return result
+            }
+            console.log(some([null, 0, true, false]) )
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        7
+      </div>
+      <div class="Contend">
+      <img src="img/keys.png" alt="">
+        <pre>
+          <code>
+            // 7
+            function keys(obj) {
+               let arr = []
+               for (const key in obj) {
+                   arr.push(key)
+               }
+               return arr
+            }
+            console.log( keys({one:'hey', two:'my', three: 'friend', sayHello: function() {console.log('Hello')}}) )
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        8
+      </div>
+      <div class="Contend">
+      <img src="img/mapObj.png" alt="">
+        <pre>
+          <code>
+            //8
+            function mapObject(obj, fn) {
+              for (const key in obj) {
+                  obj[key] = fn(obj[key])
+          
+              }
+              console.log(obj)
+           }
+           mapObject( {start: 5, end: 12}, function(val, key) {
+              return val + 5;
+            });
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        9
+      </div>
+      <div class="Contend">
+      <img src="img/pairs.png" alt="">
+        <pre>
+          <code>
+            //9
+            function pairs(obj) {
+                let arr = []
+                for (const key in obj) {
+                    arr.push([key, obj[key]])
+                }
+                return arr
+            }
+            console.log(pairs({one: 1, two: 2, three: 3}));
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        10
+      </div>
+      <div class="Contend">
+      <img src="img/invert.png" alt="">
+        <pre>
+          <code>
+            //10
+            function invert(obj) {
+                let object = {}
+                for (const key in obj) {
+                    object[obj[key]] = key
+                }
+                return object
+            }
+            
+            console.log(invert({Moe: "Moses", Larry: "Louis", Curly: "Jerome"}));            
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        N
+      </div>
+      <div class="Contend">
+      <img src="img/UNDERSCORE.png" alt="">
+        <pre>
+          <code>
+            //COOOOOOOOOOOOOOOOOOODE
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        N
+      </div>
+      <div class="Contend">
+      <img src="img/UNDERSCORE.png" alt="">
+        <pre>
+          <code>
+            //COOOOOOOOOOOOOOOOOOODE
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+  </div>
+  <script src="js/app.js"></script>
+  <script src="libs/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
