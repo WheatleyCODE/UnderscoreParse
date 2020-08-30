@@ -141,3 +141,111 @@ function invert(obj) {
 }
 
 console.log(invert({Moe: "Moses", Larry: "Louis", Curly: "Jerome"}));
+
+
+//11
+function object(arr, values) {
+    let i = 0;
+    let obj = {}
+
+    if (values === undefined) {
+        arr.forEach((elem)=> {
+         obj[elem[0]] = elem[1]
+        })
+        return obj
+    }
+
+    arr.forEach((elem) => {
+        obj[elem] = values[i]
+        i++;
+    })
+        return obj
+}
+
+console.log(object([['moe', 30], ['larry', 40], ['curly', 50]]));
+console.log(object(['moe', 'larry', 'curly'], [30, 40, 50]));
+
+//12
+function delay(fn, timeout) {
+    setTimeout(() =>{
+        fn()
+    }, timeout)
+}
+delay(() => {console.log('timeout')}, 1000)
+
+//13 
+function defer(fn) {
+    setTimeout(fn, 0)
+}
+
+defer(function(){ console.log('Defer') });
+
+
+//14
+function isFinite (num) {
+    if (num === Infinity) {
+        console.log('Бесконечность')
+    } else if (num === -Infinity) {
+        console.log('-Бесконечность')
+    }
+    console.log ('Нормальное число')
+}
+
+isFinite (-1000)
+
+
+//15
+
+function isNull (num) {
+    if (num === null) {
+        return true
+    }
+    return false
+}
+console.log(isNull(10))
+
+//16
+
+function zip(arr1, arr2 , arr3) {
+    let array = [];
+    for (let i = 0; i < arr1.length; i++ ) {
+        array.push([arr1[i], arr2[i], arr3[i]]);
+    }
+    return array
+}
+
+console.log(zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]));
+
+//17
+
+function unzip ([arr1, arr2 , arr3]) {
+    let array = [];
+    
+    for (let i = 0; i < arr1.length; i++) {
+        array.push( [arr1[i], arr2[i], arr3[i]] )
+    }
+    return array
+
+}
+
+console.log(unzip([["moe", 30, true], ["larry", 40, false], ["curly", 50, false]]));
+
+
+//18
+function shuffle (arr) {
+    for( let i = 0; i < arr.length; i++){
+        let num = getRandomInt(1, arr.length - 1)
+
+        let a = arr[num - 1]
+        let b = arr[num + 1]
+
+        arr[num - 1] = b;
+        arr[num + 1] = a
+
+
+    }
+    return arr
+
+}
+
+console.log(shuffle([1, 2, 3, 4, 5, 6]));

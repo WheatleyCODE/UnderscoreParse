@@ -277,13 +277,33 @@
     <!--  -->
     <div class="codeContent">
       <div class="Number">
-        N
+        11
       </div>
       <div class="Contend">
-      <img src="img/UNDERSCORE.png" alt="">
+      <img src="img/object.png" alt="">
         <pre>
           <code>
-            //COOOOOOOOOOOOOOOOOOODE
+            //11
+            function object(arr, values) {
+                let i = 0;
+                let obj = {}
+            
+                if (values === undefined) {
+                    arr.forEach((elem)=> {
+                     obj[elem[0]] = elem[1]
+                    })
+                    return obj
+                }
+            
+                arr.forEach((elem) => {
+                    obj[elem] = values[i]
+                    i++;
+                })
+                    return obj
+            }
+            
+            console.log(object([['moe', 30], ['larry', 40], ['curly', 50]]));
+            console.log(object(['moe', 'larry', 'curly'], [30, 40, 50]));
           </code>
         </pre>
         <button id="btn-three">Play alert</button>
@@ -293,13 +313,175 @@
     <!--  -->
     <div class="codeContent">
       <div class="Number">
-        N
+        12
       </div>
       <div class="Contend">
-      <img src="img/UNDERSCORE.png" alt="">
+      <img src="img/delay.png" alt="">
         <pre>
           <code>
-            //COOOOOOOOOOOOOOOOOOODE
+            //12
+            function delay(fn, timeout) {
+                setTimeout(() =>{
+                    fn()
+                }, timeout)
+            }
+            delay(() => {console.log('timeout')}, 1000)
+                        
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        13
+      </div>
+      <div class="Contend">
+      <img src="img/defer.png" alt="">
+        <pre>
+          <code>
+            //13 
+            function defer(fn) {
+                setTimeout(fn, 0)
+            }
+            
+            defer(function(){ console.log('Defer') });
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        14
+      </div>
+      <div class="Contend">
+      <img src="img/IsFinite.png" alt="">
+        <pre>
+          <code>
+            //14
+            function isFinite (num) {
+                if (num === Infinity) {
+                    console.log('Бесконечность')
+                } else if (num === -Infinity) {
+                    console.log('-Бесконечность')
+                }
+                console.log ('Нормальное число')
+            }
+            
+            isFinite (-1000)
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        15
+      </div>
+      <div class="Contend">
+      <img src="img/IsNull.png" alt="">
+        <pre>
+          <code>
+            //15
+
+            function isNull (num) {
+                if (num === null) {
+                    return true
+                }
+                return false
+            }
+            console.log(isNull(10))
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        16
+      </div>
+      <div class="Contend">
+      <img src="img/zip.png" alt="">
+        <pre>
+          <code>
+            //16
+
+            function zip(arr1, arr2 , arr3) {
+                let array = [];
+                for (let i = 0; i < arr1.length; i++ ) {
+                    array.push([arr1[i], arr2[i], arr3[i]]);
+                }
+                return array
+            }
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        17
+      </div>
+      <div class="Contend">
+      <img src="img/unzip.png" alt="">
+        <pre>
+          <code>
+            //17
+
+            function unzip ([arr1, arr2 , arr3]) {
+                let array = [];
+                
+                for (let i = 0; i < arr1.length; i++) {
+                    array.push( [arr1[i], arr2[i], arr3[i]] )
+                }
+                return array
+            
+            }
+            
+          </code>
+        </pre>
+        <button id="btn-three">Play alert</button>
+      </div>
+
+    </div>
+    <!--  -->
+    <div class="codeContent">
+      <div class="Number">
+        18
+      </div>
+      <div class="Contend">
+      <img src="img/shuffle.png" alt="">
+        <pre>
+          <code>
+            //18
+            function shuffle (arr) {
+                for( let i = 0; i < arr.length; i++){
+                    let num = getRandomInt(1, arr.length - 1)
+            
+                    let a = arr[num - 1]
+                    let b = arr[num + 1]
+            
+                    arr[num - 1] = b;
+                    arr[num + 1] = a
+            
+            
+                }
+                return arr
+            
+            }
+            
+            console.log(shuffle([1, 2, 3, 4, 5, 6]));
           </code>
         </pre>
         <button id="btn-three">Play alert</button>
