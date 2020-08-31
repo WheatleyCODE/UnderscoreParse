@@ -249,3 +249,104 @@ function shuffle (arr) {
 }
 
 console.log(shuffle([1, 2, 3, 4, 5, 6]));
+
+
+//19
+function sample (arr, num = 1) {
+
+    let array = []
+
+    for (let i = 0;  i < num; i++) {
+        let elem = getRandomInt(0, arr.length)
+        array.push(arr[elem])
+    }
+    return array
+}
+
+console.log(sample([1, 2, 3, 4, 5, 6]));
+console.log(sample([1, 2, 3, 4, 5, 6], 3));
+
+
+//20
+function initial (arr, num) {
+    
+    for ( let i = 0; i < num; i++) {
+        arr.pop()
+    }
+    return arr
+}
+
+console.log(initial([5, 4, 3, 2, 1]));
+console.log(initial([5, 4, 3, 2, 1], 3));
+
+//21
+
+function filter (arr, func) {
+    let array = []
+    for ( let i = 0; i < arr.length; i++) {
+        if(func(arr[i])) {
+            array.push(arr[i])
+        }
+    }
+    return array
+}
+
+
+console.log(filter( [1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; }))
+
+//22
+let listOfPlays = [
+
+    {title: "Cymbeline", author: "Shakespeare", year: 1611},
+    {title: "The Tempest", author: "Shakespeare", year: 1611},
+    {title: "The Tempest", author: "Shakespeare", year: 1612},
+    {title: "Love of Life", author: "Jack London", year: 1905},
+    {title: "The Master and Margarita", author: "Mikhail Bulgakov", year: 1966}
+
+]
+function where (arr, filter) {
+
+    let array = [];
+    for (const key in filter) {
+        console.log(filter[key])
+
+        for( let i = 0; i < arr.length; i++) {
+            
+            if (arr[i][key] == filter[key] ) {
+                array.push(arr[i])
+            }
+
+
+
+        }
+    }
+    console.log(array)
+    
+    for( let i = 0; i < array.length; i++) {
+
+       let elem = array[i]
+       let idex = i
+
+        for (let j = 0; j < array.length; j++ ) {
+        
+            if(j == idex) {
+
+                console.log('break')
+                break
+
+            }
+            if(array[j] == elem) {
+               delete array[j];
+            }
+
+        }
+    }
+    console.log(array)
+
+}
+
+where(listOfPlays, {author: "Shakespeare", year: 1611});
+
+
+
+////
