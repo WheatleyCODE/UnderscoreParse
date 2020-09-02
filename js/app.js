@@ -347,6 +347,181 @@ function where (arr, filter) {
 
 where(listOfPlays, {author: "Shakespeare", year: 1611});
 
+//23
+function compare(a, b) {
+    if (a > b) return 1;
+    if (a == b) return 0;
+    if (a < b) return -1;
+  }
+
+function invoke (arr, sort) {
+    if (sort == 'sort') {
+        arr.forEach((elem) => {
+            elem.sort(compare);
+            alert(elem);
+        });
+        return arr
+    }
+}
+
+//24
+
+function sample (arr, num = 1) {
+    let array = []
+    for(let i = 0; i < num; i++){
+        array.push(arr[getRandomInt(0, arr.length)])
+    }
+    console.log('array')
+    console.log(array)
+
+}
+sample([1, 2, 3, 4, 5, 6], 3)
 
 
-////
+//25
+
+function without(arr, ...num) {
+    arr.forEach((element, int) => {
+        num.forEach((elem) => {
+            if(element == elem) {
+                console.log('----------------')
+                // arr.splice(int, 1)
+                delete arr[int]
+            }
+        })
+    })
+    let array = []
+    arr.forEach((elem) => {
+        array.push(elem)
+    })
+    console.log(array)
+}
+
+without([1, 2, 1, 0, 3, 1, 4], 0, 1);
+
+
+
+
+
+
+// // Промисы \\\\
+
+// console.log('request data...')
+
+// // setTimeout(() => {
+// //     console.log('prepairing data...')
+
+// //     const backendData = {
+// //         server: 'avs',
+// //         port: 2000,
+// //         status: 'working'
+// //     }
+
+// //     
+    
+
+// // }, 2000)
+
+
+
+// const p = new Promise(function(resolve, reject) {
+
+//     setTimeout(() => {
+//         console.log('prepairing data...')
+//         const backendData = {
+//             server: 'avs',
+//             port: 2000,
+//             status: 'working'
+//         }
+//         resolve(backendData) // передаем параметр 
+//     }, 2000)
+
+// })
+
+// p.then((data) => {
+//     return new Promise((resolve, reject) => {
+
+//         setTimeout(() => {
+//             data.modified = true
+//             resolve(data)
+//         }, 2000)
+
+//     })
+
+    
+// })
+
+// .then((ClientData) => {
+//     console.log('data receives',  ClientData)
+//     ClientData.fromprom = true;
+//     return ClientData
+
+// }).then(data => {
+//     console.log('data modified',  data)
+// })
+// .catch(err => console.error('error', err))
+// .finally(() => {
+//     console.log('finally')
+// })
+
+
+// const sleep = ms => {
+//     return new Promise(resolve => {
+//         setTimeout(() => resolve(ms), ms)
+//     })
+// }
+
+// sleep(6000).then(sec => {
+//     console.log('After', sec)
+// })
+
+// Promise.all([sleep(8000), sleep(12000)]) // Ждем все промисы
+//     .then(() => {
+//         console.log('All full')
+//     })
+
+// Promise.race([sleep(8000), sleep(12000)]) // Не ждём все а только 1ый
+//     .then(() => {
+//         console.log('race full')
+//     })
+
+
+//Гибкая настройка объектов
+
+
+const person = Object.create(
+    {
+        calculateAge() {
+            console.log(new Date().getFullYear() - this.birthYear)
+        }
+    }, //Прототип объекта его свойства или методы
+    {
+        name: { // Поля можно настраивать 
+                // Изменять видимость
+                // Изменять возможность редактирования
+                // Изменять возможность удаления
+            value: 'Haruki Sudzumia'
+        },
+        birthYear: {
+            value: '2004'
+        },
+        status: {
+            value: 'God'
+        },
+
+        stringFn: {
+            get() {
+                // Тут можно динамически вычислять что угодно или играть код менять цвет фона или что угодно
+                return new Date().getFullYear() - this.birthYear
+            },
+            set(value) {
+                document.body.style.background = 'red'
+                console.log('set sting fn', value)
+                // Вслучает поппытки изменения значения срабатывает код 
+            }
+        }
+    }
+)
+
+console.log(person)
+
